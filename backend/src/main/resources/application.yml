@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: facility-management-system
+  data:
+    mongodb:
+      # Override MONGODB_URI outside local development; the default keeps the app runnable locally.
+      uri: ${MONGODB_URI:mongodb://localhost:27017/fms}
+
+jwt:
+  secret: ${JWT_SECRET:your-secret-key-change-in-production}
+  expiration: 86400000
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+logging:
+  level:
+    root: INFO
+    com.fms: DEBUG
